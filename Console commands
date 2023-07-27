@@ -1,0 +1,38 @@
+            const string MenuHeight = "ChangeWindowHeight";
+            const string MenuWidth = "ChangeWindowWidht";
+            const string MenuColor = "ChangeConsoleColor";
+            const string MenuTypeface = "ChangeTypefaceColor";
+            const string MenuExit = "Exit";
+
+            string userInput;
+
+            Console.WriteLine($"Здравствуй это программа может многое! Вот список:");
+            Console.WriteLine($"Изменить цвет консоли - {MenuColor} , изменить цвет шрифта - {MenuTypeface} ");
+            Console.WriteLine($"Изменить окно консоли по Y - {MenuHeight} , изменить окно консоли по X - {MenuWidth} , выход - {MenuExit} .");
+            userInput = Console.ReadLine();
+            while (userInput != MenuExit)
+            {
+                userInput = Console.ReadLine();
+                switch (userInput)
+                {
+                    case MenuHeight:
+                        Console.WindowHeight = 20;
+                        break;
+                    case MenuWidth:
+                        Console.WindowWidth = 50;
+                        break;
+                    case MenuColor:
+                        Console.BackgroundColor = ConsoleColor.White;
+                        break;
+                    case MenuTypeface:
+                        Console.ForegroundColor = ConsoleColor.Black;
+                        break;
+                    case MenuExit:
+                        break;
+                    default:
+                        Console.WriteLine("Не могу разобрать Ваше сообщение");
+                        break;
+                }
+            }
+           Console.WriteLine("Сеанс окончен...");
+           Console.ReadKey();
